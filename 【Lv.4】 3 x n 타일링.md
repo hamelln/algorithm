@@ -52,10 +52,9 @@ f(n) - f(n-1) = 3f(n-1) - f(n-2)
 function solution(n) {
     if(n<=4) return n === 2? 3 : 11;    
     n /= 2;
-    let first = BigInt(3), second = BigInt(11), a = BigInt(4), div = BigInt(1000000007), arr = [first, second], i=2;
-    for(; i<n; i++) arr.push(a*arr[i-1] - arr[i-2]);
-    let answer = Number(arr[arr.length-1]%div);
-    return answer;
+    let arr = [BigInt(3), BigInt(11)], i=2;
+    for(; i<n; i++) arr.push(BigInt(4)*arr[i-1] - arr[i-2]);
+    return Number(arr[arr.length-1]%BigInt(1000000007));
 }
 ```
 
