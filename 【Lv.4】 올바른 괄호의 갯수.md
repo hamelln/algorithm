@@ -56,10 +56,9 @@ f(n) = f(n-1)*f(1) + f(n-2)+f(2) + ... + f(1)*f(n-1)이고 아래와 같이 정�
 
 ```javascript
 function solution(n) {
-     let Molecular = n + 1, denominator = n, answer;
+     let Molecular = n + 1, denominator = n;
         for (let i = 1; i < n; i++) Molecular *= (n + 1 + i), denominator *= (n - i);
-        answer = Number(Molecular / denominator) / (n + 1);
-            return answer;
+        return Number(Molecular / denominator) / (n + 1);
 }
 ```
 
