@@ -54,11 +54,13 @@ e.t.c) 2/2 + 2/3 + 2/(3*11) + 2/(11*41) + 2/(41*153) + 2/(153*571) + ... = √3
 ```javascript
 function solution(n) {
 	if (n <= 4) return n === 2 ? 3 : 11;
+	
 	let arr = [3n, 11n];
 	for (let i = 2; i < n / 2; i++) arr[i] = (4n * arr[i - 1] - arr[i - 2]);
 	
 	let end = arr.length - 1;
 	let answer = Number(arr[end] % 1000000007n);
+	
 	return answer;
 }
 
