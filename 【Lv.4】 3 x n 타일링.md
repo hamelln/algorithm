@@ -50,8 +50,7 @@ e.t.c) 2/2 + 2/3 + 2/(3*11) + 2/(11*41) + 2/(41*153) + 2/(153*571) + ... = √3
 function solution(n) {
 	if (n <= 4) return n === 2 ? 3 : 11;
 	n /= 2;
-	let arr = [3n, 11n],
-		i = 2;
+	let arr = [3n, 11n], i = 2;
 	for (; i < n; i++) arr.push(4n * arr[i - 1] - arr[i - 2]);
 	return Number(arr[arr.length - 1] % 1000000007n);
 }
