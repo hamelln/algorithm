@@ -60,10 +60,16 @@ f(n) = f(n-1)*f(1) + f(n-2)+f(2) + ... +  f(1)*f(n-1)
 
 ```javascript
 function solution(n) {
-     let Molecular = n + 1, denominator = n;
-        for (let i = 1; i < n; i++) Molecular *= (n + 1 + i), denominator *= (n - i);
-        return Number(Molecular / denominator) / (n + 1);
+	let Molecular = n + 1,
+		denominator = n;
+        
+	for (let i = 1; i < n; i++) {
+        Molecular *= n + 1 + i; 
+        denominator *= n - i;
+   }
+	return Number(Molecular / denominator) / (n + 1);
 }
+
 ```
 
 [출처]<https://programmers.co.kr/learn/courses/30/lessons/12929>
