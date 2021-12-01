@@ -56,7 +56,7 @@ function solution(n) {
 	if (n <= 4) return n === 2 ? 3 : 11;
 	n /= 2;
 	let arr = [3n, 11n], i = 2;
-	for (; i < n; i++) arr.push(4n * arr[i - 1] - arr[i - 2]);
+	for (; i < n; i++) arr[i] = (4n * arr[i - 1] - arr[i - 2]);
 	
 	let end = arr.length - 1;
 	let answer = Number(arr[end] % 1000000007n);
