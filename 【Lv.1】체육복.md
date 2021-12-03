@@ -27,10 +27,10 @@ function solution(n, lost, reserve) {
 
 	let _lost = lost
 		.sort((a, b) => a - b)
-		.filter((s) => reserve.indexOf(s) === -1);
+		.filter((s) => !reserve.includes(s));
 	let _reserve = reserve
 		.sort((a, b) => a - b)
-		.filter((s) => lost.indexOf(s) === -1);
+		.filter((s) => !lost.includes(s));
 
 <!-- 
 1. 앞자리 학생에게 빌릴 수 있는지 먼저 확인하고
