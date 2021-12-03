@@ -47,9 +47,8 @@ function solution(n, lost, reserve) {
 			const after = _reserve.indexOf(s + 1);
 			_reserve.splice(after, 1);
 			return false;
-		} else {
-			return true;
-		}
+		} 
+        	return true;
 	});
 	return n - _lost.length;
 }
