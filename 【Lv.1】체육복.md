@@ -40,8 +40,8 @@ function solution(n, lost, reserve) {
 
 	_lost = _lost.filter((s) => {
 		if (_reserve.includes(s-1)) {
-			const pront = _reserve.indexOf(s - 1);
-			_reserve.splice(pront, 1);
+			const front = _reserve.indexOf(s - 1);
+			_reserve.splice(front, 1);
 			return false;
 		} else if (_reserve.includes(s+1)) {
 			const back = _reserve.indexOf(s + 1);
