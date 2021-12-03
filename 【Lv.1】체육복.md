@@ -24,6 +24,7 @@
 ```javascript
 function solution(n, lost, reserve) {
 <!-- lost와 reserve를 오름차순 정렬 & 중복하는 숫자를 제거한다.-->
+
 	let _lost = lost
 		.sort((a, b) => a - b)
 		.filter((s) => reserve.indexOf(s) === -1);
