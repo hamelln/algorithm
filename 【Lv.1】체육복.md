@@ -27,22 +27,23 @@ function solution(n, lost, reserve) {
 
 	let _lost = lost
 		.sort((a, b) => a - b)
-		.filter((s) => !reserve.includes(s));
+		.filter(s => !reserve.includes(s));
 	let _reserve = reserve
 		.sort((a, b) => a - b)
-		.filter((s) => !lost.includes(s));
+		.filter(s => !lost.includes(s));
 
 <!-- 
 1. 앞자리 학생에게 빌릴 수 있는지 먼저 확인하고
 2. 안 되면 뒷자리 학생에게 빌릴 수 있는지 확인한다.
 3. 둘 다 안 되면 못 빌리는 것으로 처리.
 -->
+
 	_lost = _lost.filter((s) => {
-		if (_reserve.indexOf(s - 1) !== -1) {
+		if (_reserve.includes(s-1)) {
 			const before = _reserve.indexOf(s - 1);
 			_reserve.splice(before, 1);
 			return false;
-		} else if (_reserve.indexOf(s + 1) !== -1) {
+		} else if (_reserve.includes(s+1)) {
 			const after = _reserve.indexOf(s + 1);
 			_reserve.splice(after, 1);
 			return false;
