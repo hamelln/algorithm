@@ -40,12 +40,12 @@ function solution(n, lost, reserve) {
 
 	_lost = _lost.filter((s) => {
 		if (_reserve.includes(s-1)) {
-			const before = _reserve.indexOf(s - 1);
-			_reserve.splice(before, 1);
+			const pront = _reserve.indexOf(s - 1);
+			_reserve.splice(pront, 1);
 			return false;
 		} else if (_reserve.includes(s+1)) {
-			const after = _reserve.indexOf(s + 1);
-			_reserve.splice(after, 1);
+			const back = _reserve.indexOf(s + 1);
+			_reserve.splice(back, 1);
 			return false;
 		} 
         	return true;
