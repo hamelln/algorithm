@@ -18,9 +18,10 @@
     - 저장 데이터 : n을 3으로 나눴을 때 발생하는 나머지 값
 
 
-### 풀이 과정
+### 풀이 1
 
 ```txt
+
 n = 45일 때의 예시
 
 45 / 3 = 15...0
@@ -55,6 +56,25 @@ function solution(n) {
   }
   answer += n;
   return answer;
+}
+```
+
+### 풀이 2
+
+```txt
+num.toString(x)는 숫자 num을 x진법으로 변환하는 기능이 있다.
+parseInt(str,x)는 숫자형 문자열 str을 x진법으로 변환하는 기능이 있다.
+
+1. n.toString(3)으로 n을 3진법화 및 문자열화한다. // 45 => "1200"
+2. split("")으로 한 글자씩 분리시켜 배열화한다. // "1200" => ['1','2','0','0']
+3. reverse()를 써서 거꾸로 정렬한다. // ['1','2','0','0'] => ['0','0','2','1']
+4. join으로 배열 내용들을 다 합친다. // ['0','0','2','1'] => "0021"
+5. parseInt(str,3)으로 다시 3진법화한다. "0021" => 7
+```
+
+```javascript
+function solution(n) {
+	return parseInt(n.toString(3).split("").reverse().join(""), 3);
 }
 ```
 
