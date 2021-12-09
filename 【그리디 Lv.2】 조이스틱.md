@@ -1,7 +1,5 @@
 # 조이스틱 (프로그래머스 문제 Lv 2)
 
-## 문제 설명
-
 ![image](https://user-images.githubusercontent.com/39308313/145410074-c79c5eec-a46b-46a5-a5cb-79cf384b10d3.png)
 
 ## 풀이 과정
