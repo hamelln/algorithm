@@ -71,7 +71,7 @@ function solution(name) {
 			count += 2;
 		}
 	}
-	return min > 0 ? sum : sum + min;
+	return sum + min;
 }
 ```
 
